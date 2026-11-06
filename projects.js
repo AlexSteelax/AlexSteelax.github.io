@@ -70,7 +70,7 @@
       .then(function (repos) {
         var html = repos
           .filter(function (repo) {
-            return !repo.fork && !/^[^.]+\.github\.io$/.test(repo.name);
+            return !repo.archived && !repo.fork && !/^[^.]+\.github\.io$/.test(repo.name);
           })
           .slice(0, PROJECTS_COUNT)
           .map(buildProjectCard)
